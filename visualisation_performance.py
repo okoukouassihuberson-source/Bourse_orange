@@ -14,99 +14,94 @@ st.set_page_config(
 )
 
 # 2. CSS Expert (Bootstrap + Custom Professional Styles)
+st.html("""
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
+:root {
+    --orange-orange: #FF7900;
+    --pure-white: #FFFFFF;
+}
 
-st.markdown(
-    """
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+[data-testid="stAppViewContainer"] {
+    background-image: url("https://raw.githubusercontent.com/okoukouassihuberson-source/Bourse_orange/main/okou.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
-    :root {
-        --orange-orange: #FF7900;
-        --pure-white: #FFFFFF;
-    }
+[data-testid="stHeader"] {
+    background-color: rgba(0,0,0,0);
+}
 
-    [data-testid="stAppViewContainer"] {
-        background-image: url("https://raw.githubusercontent.com/okoukouassihuberson-source/Bourse_orange/main/okou.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
+.block-container {
+    background-color: rgba(241, 243, 246, 0.8);
+    padding: 2.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
 
-    [data-testid="stHeader"] {
-        background-color: rgba(0,0,0,0);
-    }
+.f-card {
+    background: white;
+    border-radius: 15px;
+    border: none;
+    border-left: 6px solid var(--orange-orange);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
 
-    .block-container {
-        background-color: rgba(241, 243, 246, 0.8);
-        padding: 2.5rem;
-        border-radius: 20px;
-        backdrop-filter: blur(8px);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-    }
+.f-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(255, 121, 0, 0.15);
+    border-left: 8px solid #000;
+}
 
-    .f-card {
-        background: white;
-        border-radius: 15px;
-        border: none;
-        border-left: 6px solid var(--orange-orange);
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-    
-    .f-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 25px rgba(255, 121, 0, 0.15);
-        border-left: 8px solid #000;
-    }
+h1, h2, h3 { color: #000 !important; font-weight: 800; }
 
-    h1, h2, h3 { color: #000 !important; font-weight: 800; }
-    
-    .badge-trend {
-        padding: 0.5em 1em;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        color: white;
-        background-color: var(--orange-orange);
-    }
+.badge-trend {
+    padding: 0.5em 1em;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+    background-color: var(--orange-orange);
+}
 
-    .stTabs [role="tablist"] {
-        background-color: #f8f9fa;
-        border-radius: 10px;
-        padding: 0.5rem;
-        margin-bottom: 1rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .stTabs [role="tab"] {
-        background-color: white;    
-        border: none;
-        border-radius: 8px;
-        margin: 0 0.25rem;
-        padding: 0.5rem 1rem;
-        font-weight: 600;
-        color: #212529;
-        transition: background-color 0.3s ease;
-        border-left: 6px solid transparent;
-    }
-    .stTabs [role="tab"][aria-selected="true"] {
-        background-color: var(--orange-orange);
-        color: white;
-        border-left: 6px solid var(--orange-orange);
-    }
-    .stTabs [role="tab"]:hover {
-        background-color: #ffe6cc;
-        color: #212529;
-        border-left: 6px solid #FF7900;
-        border-left: 6px solid var(--orange-orange);
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+.stTabs [role="tablist"] {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.stTabs [role="tab"] {
+    background-color: white;    
+    border: none;
+    border-radius: 8px;
+    margin: 0 0.25rem;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    color: #212529;
+    transition: background-color 0.3s ease;
+    border-left: 6px solid transparent;
+}
+.stTabs [role="tab"][aria-selected="true"] {
+    background-color: var(--orange-orange);
+    color: white;
+    border-left: 6px solid var(--orange-orange);
+}
+.stTabs [role="tab"]:hover {
+    background-color: #ffe6cc;
+    color: #212529;
+    border-left: 6px solid #FF7900;
+    border-left: 6px solid var(--orange-orange);
+}
+</style>
+""")
 
 # Watermark dynamique
 st.markdown(
