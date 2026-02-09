@@ -4,6 +4,8 @@ import numpy as np
 import plotly.graph_objects as go
 from datetime import datetime
 import requests
+import base64
+import os
 
 # 1. Configuration de la page
 st.set_page_config(
@@ -13,8 +15,15 @@ st.set_page_config(
 )
 
 # 2. CSS Expert (Bootstrap + Custom Professional Styles)
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+img_base64 = get_base64_of_bin_file("okou.png")
+
 st.markdown(
-    """
+    f"""
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     
@@ -28,7 +37,7 @@ st.markdown(
    
     /* Image de fond fixe */
     .stApp {
-        background-image: url("okou.png");
+        background-image: url("data:image/png;base64,%s");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -100,7 +109,7 @@ st.markdown(
     }
     
     </style>
-    """,
+    """ % img_base64,
     unsafe_allow_html=True
 )
 
