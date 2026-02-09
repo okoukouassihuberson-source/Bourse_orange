@@ -31,15 +31,20 @@ st.markdown(
     }
    
     /* Image de fond fixe */
-    .stApp {
-        background-image: url("okou.png");
+    [data-testid="stAppViewContainer"] {
+        background-image: url("https://raw.githubusercontent.com/okoukouassihuberson-source/Bourse_orange/main/okou.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    [data-testid="stHeader"] {
+        background-color: rgba(0,0,0,0);
     }
     /* Overlay Glassmorphism pour le contenu */
     .block-container {
-        background-color: rgba(241, 243, 246, 0.94);
+        background-color: rgba(241, 243, 246, 0.8);
         padding: 2.5rem;
         border-radius: 20px;
         backdrop-filter: blur(8px);
