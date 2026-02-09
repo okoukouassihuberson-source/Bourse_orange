@@ -23,7 +23,7 @@ def get_base64_of_bin_file(bin_file):
 img_base64 = get_base64_of_bin_file("okou.png")
 
 st.markdown(
-    f"""
+    """
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     
@@ -37,7 +37,7 @@ st.markdown(
    
     /* Image de fond fixe */
     .stApp {
-        background-image: url("data:image/png;base64,%s");
+        background-image: url("data:image/png;base64,""" + img_base64 + """);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -109,7 +109,7 @@ st.markdown(
     }
     
     </style>
-    """ % img_base64,
+    """,
     unsafe_allow_html=True
 )
 
