@@ -23,6 +23,8 @@ st.html("""
 :root {
     --orange-orange: #FF7900;
     --pure-white: #FFFFFF;
+    --text-dark: #1a1a1a;
+    --text-light: #FFFFFF;
 }
 
 [data-testid="stAppViewContainer"] {
@@ -43,6 +45,7 @@ st.html("""
     border-radius: 20px;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    color: var(--text-dark);
 }
 
 .f-card {
@@ -52,6 +55,7 @@ st.html("""
     border-left: 6px solid var(--orange-orange);
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    color: var(--text-dark);
 }
 
 .f-card:hover {
@@ -60,7 +64,22 @@ st.html("""
     border-left: 8px solid #000;
 }
 
-h1, h2, h3 { color: #000 !important; font-weight: 800; }
+.f-card h1, .f-card h2, .f-card h3, .f-card h4, .f-card h5, .f-card h6 {
+    color: #000 !important;
+}
+
+.f-card .text-muted {
+    color: #6c757d !important;
+}
+
+h1, h2, h3 { 
+    color: var(--text-dark) !important; 
+    font-weight: 800; 
+}
+
+p, div, span {
+    color: inherit;
+}
 
 .badge-trend {
     padding: 0.5em 1em;
@@ -96,11 +115,19 @@ h1, h2, h3 { color: #000 !important; font-weight: 800; }
 }
 .stTabs [role="tab"]:hover {
     background-color: #ffe6cc;
-    color: #212529;
-    border-left: 6px solid #FF7900;
+    color: #c05400;
     border-left: 6px solid var(--orange-orange);
 }
+
+[data-testid="stMarkdownContainer"] {
+    color: var(--text-dark);
+}
+
+.stDataFrame {
+    color: var(--text-dark);
+}
 </style>
+
 """)
 
 # Watermark dynamique
