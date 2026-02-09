@@ -36,15 +36,21 @@ st.markdown(
     }
    
     /* Image de fond fixe */
-    .stApp {
+    /* Image de fond fixe */
+    [data-testid="stAppViewContainer"] {
         background-image: url("data:image/png;base64,""" + img_base64 + """);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    [data-testid="stHeader"] {
+        background-color: rgba(0,0,0,0);
     }
     /* Overlay Glassmorphism pour le contenu */
     .block-container {
-        background-color: rgba(241, 243, 246, 0.94);
+        background-color: rgba(241, 243, 246, 0.8);
         padding: 2.5rem;
         border-radius: 20px;
         backdrop-filter: blur(8px);
