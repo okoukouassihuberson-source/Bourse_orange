@@ -138,7 +138,13 @@ with st.sidebar:
 @st.cache_data
 def fetch_and_clean_data(url):
     try:
-        tables = pd.read_html(url)
+
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        }
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        tables = pd.read_html(response.content)
         df = tables[0]
         df['Clôture'] = df['Clôture'].astype(str).str.replace(r'\s+', '', regex=True).str.replace(',', '.')
         df['Clôture'] = pd.to_numeric(df['Clôture'], errors='coerce')
