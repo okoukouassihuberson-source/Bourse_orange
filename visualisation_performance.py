@@ -20,8 +20,6 @@ st.markdown(
     """
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    
-    <div style="display: none;">okou.png</div>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
@@ -29,8 +27,7 @@ st.markdown(
         --orange-orange: #FF7900;
         --pure-white: #FFFFFF;
     }
-   
-    /* Image de fond fixe */
+
     [data-testid="stAppViewContainer"] {
         background-image: url("https://raw.githubusercontent.com/okoukouassihuberson-source/Bourse_orange/main/okou.png");
         background-size: cover;
@@ -42,7 +39,7 @@ st.markdown(
     [data-testid="stHeader"] {
         background-color: rgba(0,0,0,0);
     }
-    /* Overlay Glassmorphism pour le contenu */
+
     .block-container {
         background-color: rgba(241, 243, 246, 0.8);
         padding: 2.5rem;
@@ -51,7 +48,6 @@ st.markdown(
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     }
 
-    /* Cartes KPI Professionnelles */
     .f-card {
         background: white;
         border-radius: 15px;
@@ -77,7 +73,7 @@ st.markdown(
         color: white;
         background-color: var(--orange-orange);
     }
-    /* Personnalisation des onglets */
+
     .stTabs [role="tablist"] {
         background-color: #f8f9fa;
         border-radius: 10px;
@@ -107,7 +103,6 @@ st.markdown(
         border-left: 6px solid #FF7900;
         border-left: 6px solid var(--orange-orange);
     }
-    
     </style>
     """,
     unsafe_allow_html=True
