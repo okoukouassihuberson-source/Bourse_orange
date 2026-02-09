@@ -4,8 +4,7 @@ import numpy as np
 import plotly.graph_objects as go
 from datetime import datetime
 import requests
-import base64
-import os
+
 
 # 1. Configuration de la page
 st.set_page_config(
@@ -15,18 +14,14 @@ st.set_page_config(
 )
 
 # 2. CSS Expert (Bootstrap + Custom Professional Styles)
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
 
-img_base64 = get_base64_of_bin_file("okou.png")
 
 st.markdown(
     """
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     
+    <div style="display: none;">okou.png</div>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
@@ -36,21 +31,15 @@ st.markdown(
     }
    
     /* Image de fond fixe */
-    /* Image de fond fixe */
-    [data-testid="stAppViewContainer"] {
-        background-image: url("data:image/png;base64,""" + img_base64 + """);
+    .stApp {
+        background-image: url("okou.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    
-    [data-testid="stHeader"] {
-        background-color: rgba(0,0,0,0);
     }
     /* Overlay Glassmorphism pour le contenu */
     .block-container {
-        background-color: rgba(241, 243, 246, 0.8);
+        background-color: rgba(241, 243, 246, 0.94);
         padding: 2.5rem;
         border-radius: 20px;
         backdrop-filter: blur(8px);
